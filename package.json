@@ -2,9 +2,10 @@
   "name": "react-redux-sweetalert2",
   "version": "1.0.0",
   "description": "react-redux-sweetalert2 is a React component to show beautiful alerts on your app.",
-  "main": "dev/index.js",
+  "main": "lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "publish": "./node_modules/.bin/babel src/ --out-dir lib"
   },
   "keywords": [],
   "author": "",
@@ -18,6 +19,8 @@
     "sweetalert2": "^6.0.1"
   },
   "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-cli": "^6.18.0",
     "babel-core": "^6.18.2",
     "babel-loader": "^6.2.7",
     "babel-preset-es2015": "^6.18.0",
@@ -26,20 +29,5 @@
     "css-loader": "^0.25.0",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.3"
-  },
-  "keywords": [
-    "React.js",
-    "React",
-    "Redux",
-    "react",
-    "sweetalert",
-    "sweetalert2"
-    "redux alert",
-    "react-redux-sweetalert2",
-    "react-component",
-    "alert",
-    "message",
-    "popup",
-    "react alert",
-  ]
+  }
 }

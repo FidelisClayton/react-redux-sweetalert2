@@ -32,9 +32,4 @@ function mapStateToProps(state) {
 	return state;
 }
 
-export default connect(mapStateToProps, 
-	{
-		showAlert: swal.showAlert,
-		hideAlert: swal.hideAlert
-	}
-)(App);
+export default connect(mapStateToProps, {...swal})(App);

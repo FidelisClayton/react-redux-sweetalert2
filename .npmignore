@@ -1,0 +1,9 @@
+build/
+dist/
+node_modules/
+src/
+index.html
+webpack.config.js
+dev/
+.babelrc
+.npmignore

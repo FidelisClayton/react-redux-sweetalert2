@@ -1,10 +1,13 @@
 var webpack = require('webpack');
 
 module.exports = {
-    entry: './dev/index.js',
+    entry: {
+        app: './dev/index.js',
+        index: './src/index.js'
+    },
     output: {
         path: './build/',
-        filename: 'app.bundle.js'
+        filename: '[name].js'
     },
     module: {
         loaders: [
