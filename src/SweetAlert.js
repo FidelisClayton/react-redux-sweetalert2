@@ -1,12 +1,20 @@
 import React, { Component, PropTypes } from 'react';
-
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import { default as swal} from 'sweetalert2';
+
+import * as actions from './actions';
+
 import 'sweetalert2/dist/sweetalert2.css';
 
-export default class SweetAlert extends Component { 
+class SweetAlert extends Component { 
 	constructor(props) {
 		super(props);
 	} 
+
+	componentDidUpdate() {
+		const {add, show} = this.props.swal;
+	}
 
 	render() {
 		let { 
@@ -16,18 +24,21 @@ export default class SweetAlert extends Component {
 			confirmAlert,
 			cancelAlert,
 			showLoaderOnConfirm
-		} = this.props;
+		} = this.props.swal;
 
-		const options = this.props;
+		const options = this.props.swal;
 
 		if(show) {
 			swal(options)
 				.then(() => {
+					console.log("dismiss");
+					this.props.hideAlert();
 					if(confirmAlert && showLoaderOnConfirm === false) {
 						swal(confirmAlert);
 					}
 
 				}, (dismiss) => {
+
 					switch(dismiss) {
 						case 'timer':
 							timerCallback();
@@ -47,6 +58,19 @@ export default class SweetAlert extends Component {
 		return null;
 	}
 }
+
+function mapStateToProps(store) {
+	return {
+		swal: store.swal ? store.swal : {},
+		default: store.reducers
+	};
+}
+
+function mapDispatchToProps(dispatch) {
+	return bindActionCreators(actions, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SweetAlert);
 
 SweetAlert.propTypes = {
 	title: PropTypes.string,
@@ -102,5 +126,5 @@ SweetAlert.propTypes = {
 SweetAlert.defaultProps = {
 	cancelCallback: function() {},
 	timerCallback: function() {},
-	showLoaderOnConfirm: false
+	showLoaderOnConfirm: false,
 };
