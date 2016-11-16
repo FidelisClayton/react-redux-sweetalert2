@@ -1,6 +1,12 @@
 # react-redux-sweetalert2
 React and Redux sweetalert2 wrapper
 
+## Install
+NPM
+```sh
+npm i -S react-redux-sweetalert2
+```
+
 ## Basic usage
 ``` javascript
 import React from 'react';
@@ -9,7 +15,7 @@ import { Provider } from 'react-redux';
 import { createStore, combineReducers } from 'redux';
 
 import App from './App';
-import SweetAlert, { reducers as swalReducers } from '../src';
+import SweetAlert, { reducers as swalReducers } from 'react-redux-sweetalert2';
 
 const store = createStore(combineReducers({
 	swal: swalReducers
@@ -31,7 +37,7 @@ App.js
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import SweetAlert, { swal } from '../src';
+import { swal } from 'react-redux-sweetalert2';
 
 class App extends Component {
 	handleShowButtonClick() {
@@ -52,7 +58,6 @@ class App extends Component {
 			<div>
 				<h1>Hello!</h1>
 				<button onClick={() => this.handleShowButtonClick() } >Show Alert!</button>
-				<button onClick={() => this.handleHideButtonClick() } >Hide Alert!</button>
 			</div>
 		);
 	}
