@@ -1,6 +1,6 @@
 {
   "name": "react-redux-sweetalert2",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "react-redux-sweetalert2 is a React component to show beautiful alerts on your app.",
   "main": "lib/index.js",
   "scripts": {
@@ -8,10 +8,16 @@
     "publish": "./node_modules/.bin/babel src/ --out-dir lib"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Clayton Fidelis clayton.fidelis@live.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FidelisClayton/react-redux-sweetalert2"
+  },
+  "bugs": {
+    "url": "https://github.com/FidelisClayton/react-redux-sweetalert2/issues"
+  },
+  "license": "MIT",
   "dependencies": {
-    "eventemitter3": "^2.0.2",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
     "react-redux": "^4.4.6",
