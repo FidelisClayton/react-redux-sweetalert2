@@ -71,6 +71,53 @@ function mapStateToProps(state) {
 export default connect(mapStateToProps, {...swal})(App);
 ```
 
+## Props
+
+#### `title`: PropTypes.string
+The `title` property is used to set the alert title.
+
+#### `text`: PropTypes.string
+The `text` property is used to set the alert text.
+
+#### `html`: PropTypes.string
+The `html` property is used to set the alert content with html.
+
+#### `width`: PropTypes.string
+The `width`property is used to set the alert width in pixels. Ex.: `width: '100px'`.
+
+#### `timer`: PropTypes.number
+The `timer` property is used to close the alert automatically.
+
+#### `animation`: PropTypes.bool
+The `animation` property is used to enable/disable the icon animation.
+
+#### `showConfirmButton`: PropTypes.bool
+The `showConfirmButton` property is used to show/hide the confirm button.
+
+#### `showCancelButton`: PropTypes.bool
+The `showCancelButton` property is used to show/hide the cancel button.
+
+#### `confirmButtonClass`: PropTypes.string
+The `confirmButtonClass` property is used to add a custom class to the confirm button..
+
+#### `cancelButtonClass`: PropTypes.string
+The `cancelButtonClass` property is used to add a custom class to the cancel button.
+
+#### `cancelCallback`: PropTypes.func
+The `cancelCallback` property is used to run a function when the user click on cancel button.
+
+#### `timerCallback`: PropTypes.func
+The `timerCallback` property is a function who is called when the alert is closed by timber.
+
+#### `confirmAlert`: PropTypes.object
+The `confirmAlert` property is a object containing the options of a alert who will be called when the user click on confirm button.
+
+#### `confirmButtonText`: PropTypes.string
+The `confirmButtonText` property is used to set the confirm button text.
+
+#### `cancelButtonText`: PropTypes.string
+The `cancelButtonText` property is used to set the cancel button text.
+
 # Licence
 
 The MIT License (MIT)
